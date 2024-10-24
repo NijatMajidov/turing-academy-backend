@@ -8,6 +8,8 @@ public class Main {
         System.out.printf("Hello, World: %.2f\n", 50.0);
         System.out.printf("Hello, World: %f", 50.0);
         System.out.printf("\nHello, World: %d", 10);
-        System.out.printf("\nHello,%s -%s"," World","2324");
+        System.out.printf("\nHello,%s -%s"," World","2324\n");
+
+        System.out.print("1\n2\n3\n4\n5");
     }
 }
