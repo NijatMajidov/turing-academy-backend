@@ -10,6 +10,10 @@ public class Main {
         System.out.printf("\nHello, World: %d", 10);
         System.out.printf("\nHello,%s -%s"," World","2324\n");
 
-        System.out.print("1\n2\n3\n4\n5");
+        System.out.println("1\n2\n3\n4\n5");
+        int value = 10;
+        System.out.println(value);
+
+
     }
 }
