@@ -14,6 +14,5 @@ public class Main {
         int value = 10;
         System.out.println(value);
 
-
     }
 }
