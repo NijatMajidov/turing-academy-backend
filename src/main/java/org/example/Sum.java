@@ -16,7 +16,7 @@ public class Sum {
 
         System.out.printf("Cem: %d\n",sum);
         System.out.printf("ferq: %d\n",ferq);
-        System.out.printf("tam: %d\n",bol);
+        System.out.printf("tam hisse: %d\n",bol);
         System.out.printf("kesr hisse: %f\n", kesr-bol);
         System.out.println(kesr);
         System.out.println(vur);
