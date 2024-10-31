@@ -32,7 +32,7 @@ public class OperatorsApp {
         System.out.println("num ^= 0b1010: " + (num ^= 0b1010));
         System.out.println("num <<= 2: " + (num <<= 2));
         System.out.println("num >>= 1: " + (num >>= 1));
-        System.out.println("num >>>= 1: " + (num >> 1));
+        System.out.println("num >> 2 : " + (num >> 2));
 
         System.out.print("Enter a number c: \t");
         int c = scan.nextInt();
