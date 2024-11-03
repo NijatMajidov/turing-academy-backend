@@ -11,18 +11,22 @@ public class Task1App {
         String result = "";
 
         //proses
-        if (number > 0) {
-            result="The number is positive.";
+        if (number == 0) {
+            result="The number is zero.";
         } else if (number < 0) {
             result="The number is negative.";
+            if (number % 2 == 0) {
+                result+=" The number is even.";
+            } else {
+                result+=" The number is odd.";
+            }
         } else {
-            result="The number is zero.";
-        }
-
-        if (number % 2 == 0) {
-            result+=" The number is even.";
-        } else {
-            result+=" The number is odd.";
+            result="The number is positive.";
+            if (number % 2 == 0) {
+                result+=" The number is even.";
+            } else {
+                result+=" The number is odd.";
+            }
         }
 
         //output
