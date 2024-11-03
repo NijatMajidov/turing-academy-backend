@@ -10,25 +10,33 @@ public class Task1App {
         int number = scanner.nextInt();
         String result = "";
 
+        //ternary version
+        result = number % 2 == 1 && number > 0 ? "Positive Odd number" :
+                (number % 2 == 0 && number > 0 ? "Positive Even number" :
+                        (number < 0 && number % 2 == 0 ? "Negative Even number" :
+                                (number % 2 == -1 && number < 0 ? "Negative Odd number" : "Zero")));
+
+        System.out.println(result);
+        //value reset
+        result = "";
         //proses
         if (number == 0) {
-            result="The number is zero.";
+            result = "The number is zero.";
         } else if (number < 0) {
-            result="The number is negative.";
+            result = "The number is negative.";
             if (number % 2 == 0) {
-                result+=" The number is even.";
+                result += " The number is even.";
             } else {
-                result+=" The number is odd.";
+                result += " The number is odd.";
             }
         } else {
-            result="The number is positive.";
+            result = "The number is positive.";
             if (number % 2 == 0) {
-                result+=" The number is even.";
+                result += " The number is even.";
             } else {
-                result+=" The number is odd.";
+                result += " The number is odd.";
             }
         }
-
         //output
         System.out.println(result);
     }
