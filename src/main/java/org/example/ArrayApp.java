@@ -3,16 +3,15 @@ package org.example;
 import java.util.Scanner;
 
 public class ArrayApp {
+
     public static void main(String[] args) {
         //input
         int[] num = new int[6];
         Scanner scan = new Scanner(System.in);
-
         //proses
         for(int i=0;i<num.length;i++){
             num[i]= scan.nextInt();
         }
-
         int max = num[0];
         for(int i=1;i<num.length;i++){
             if(max<num[i]){
