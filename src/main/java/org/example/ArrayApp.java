@@ -4,7 +4,14 @@ import java.util.Scanner;
 
 public class ArrayApp {
     public static void main(String[] args) {
-        int[] num ={35,43,545,23,12};
+        //input
+        int[] num = new int[6];
+        Scanner scan = new Scanner(System.in);
+
+        //proses
+        for(int i=0;i<num.length;i++){
+            num[i]= scan.nextInt();
+        }
 
         int max = num[0];
         for(int i=1;i<num.length;i++){
@@ -12,7 +19,7 @@ public class ArrayApp {
                 max=num[i];
             }
         }
-
+        //output
         System.out.println(max);
     }
 }
