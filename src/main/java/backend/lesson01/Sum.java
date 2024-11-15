@@ -1,4 +1,4 @@
-package org.example;
+package backend.lesson01;
 
 public class Sum {
     public static void main(String[] args) {

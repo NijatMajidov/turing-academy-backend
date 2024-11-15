@@ -1,4 +1,4 @@
-package org.example;
+package backend.lesson04;
 
 public class LoopsApp {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.example;
+package backend.lesson03;
 
 public class LogicalOperatorsApp {
     public static void main(String[] args) {

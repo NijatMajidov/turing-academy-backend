@@ -1,4 +1,4 @@
-package org.example;
+package backend.lesson07;
 
 import java.util.Scanner;
 

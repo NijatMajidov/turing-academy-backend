@@ -1,5 +1,5 @@
-package org.example;
-public class Main {
+package backend.lesson01;
+public class PrintsApp {
     public static void main(String[] args) {
 
         System.out.print("Hello, World");
