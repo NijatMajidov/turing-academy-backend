@@ -6,21 +6,20 @@ public class RandomTask {
 
         public static void main(String[] args) {
             //input
-            int[] seats = new int[28];
-            for (int i = 0; i < seats.length; i++) {
+            int[] seats = new int[23];
+            for(int i = 0; i < seats.length; i++){
                 seats[i] = i + 1;
             }
             String[] students = {
-                    "Fəxri Babayev", "Lala Hamidova", "Raminə Səlimova","Seyran","Gunay İskandarova","Sənubər Abbasova",
-                    "Mammadov Famil", "Gular Abilova", "Rəvan Ağayev", "Ruslan Cherkezov","Nicat Məcidov", "Yetar",
-                    "Ali Muradov", "Dilbar Mirzeyeva", "Aynur Mammadova","Ilkin Rzayev", "Parvin Salahov", "Jamal",
-                    "Royal Askarov","Ella Piriyeva", "Tural", "Omer Alakbarov", "Rena Mehdiyeva", "Nihad Rəsulov",
-                    "Mahammad", "Rəvan Əliyev", "Ibrahim Alakbarov", "Pervin Bedelova"
+                    "Fəxri Babayev", "Lala Hamidova", "Raminə Səlimova","Seyran Xəlilzadə","Gunay İskandarova","Sənubər Abbasova",
+                    "Mammadov Famil", "Gülər Əbilova", "Rəvan Ağayev", "Ruslan Cerkezov","Nicat Məcidov", "Yetər Nəbiyeva",
+                    "Ali Muradov", "Dilbar Mirzeyeva", "Aynur Mammadova","Ella Piriyeva", "Tural Nəzərov", "Ömər Ələkbərov",
+                    "Rena Mehdiyeva", "Hüseynov Məhəmməd", "Rəvan Əliyev", "İbrahim Ələkbərov", "Pervin Bedelova"
             };
             //proses
             shuffleArray(students);
             //output
-            for (int i = 0; i < seats.length; i++) {
+            for(int i = 0; i < seats.length; i++){
                 System.out.println("Yer " + seats[i] + ": " + students[i]);
             }
         }
