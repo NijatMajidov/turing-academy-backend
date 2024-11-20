@@ -1,7 +1,7 @@
 package backend.eolympProblems.problem14;
 
 import java.util.Scanner;
-public class Eolymp14 {
+public class TheTicketChaseApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
