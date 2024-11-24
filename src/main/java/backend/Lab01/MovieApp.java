@@ -8,7 +8,7 @@ public class MovieApp {
         Scanner scan = new Scanner(System.in);
         boolean proses = true;
         String choice;
-        Movie[] movies = new Movie[1];
+        Movie[] movies = new Movie[0];
         int count = 0;
 
         while (proses) {
@@ -22,7 +22,6 @@ public class MovieApp {
                     "\n7. Delete movie" +
                     "\n8. Sort movies" +
                     "\n0. Exit");
-
             System.out.print("Enter the choice: ");
             choice = scan.next();
             scan.nextLine();
@@ -44,8 +43,10 @@ public class MovieApp {
                     break;
                 case "4":
                     System.out.printf("The average rating of all movies: %5.2f\n", numericalAverage(movies));
+
                     System.out.println("Movies with the maximum rating:");
                     displayMovies(maxRating(movies));
+
                     System.out.println("Movies with the minimum rating:");
                     displayMovies(minRating(movies));
                     break;
@@ -55,9 +56,7 @@ public class MovieApp {
                     Movie[] foundMovies = searchMovie(name, movies);
                     if (foundMovies.length > 0) {
                         System.out.println("Found Movies:");
-                        for (Movie movie : foundMovies) {
-                            System.out.println(movie.toString());
-                        }
+                        displayMovies(foundMovies);
                     }
                     break;
                 case "6":
@@ -111,8 +110,8 @@ public class MovieApp {
         return movies;
     }
     public static void displayMovies(Movie[] movies){
-        if(movies[0]==null){
-            System.out.println("there is no movie!");
+        if(movies.length==0){
+            System.out.println("There is no movie!");
         }else{
             for (int i = 0; i < movies.length; i++) {
               System.out.println(movies[i].toString());
@@ -129,6 +128,9 @@ public class MovieApp {
     }
 
     public static Movie[] maxRating(Movie[] movies){
+        if (movies.length == 0) {
+            return new Movie[0];
+        }
         double maxRating = movies[0].rating;
         for (Movie movie : movies) {
             if (movie.rating > maxRating) {
@@ -152,6 +154,9 @@ public class MovieApp {
     }
 
     public static Movie[] minRating(Movie[] movies){
+        if (movies.length == 0) {
+            return new Movie[0];
+        }
         double minRating = movies[0].rating;
         for (Movie movie : movies) {
             if (movie.rating < minRating) {
@@ -196,6 +201,10 @@ public class MovieApp {
     }
 
     public static void updateRating(Scanner scan, Movie[] movies){
+        if (movies.length == 0) {
+            System.out.println("Movie not found!");
+            return;
+        }
         System.out.print("Enter the search movie name: ");
         String name = scan.nextLine();
         Movie[] movie=  searchMovie(name,movies);
@@ -214,6 +223,10 @@ public class MovieApp {
     }
 
     public static Movie[] deleteMovie(Scanner scan, Movie[] movies){
+        if (movies.length == 0) {
+            System.out.println("Movie not found!");
+            return new Movie[0];
+        }
         System.out.print("Enter the search movie name: ");
         String name = scan.nextLine();
         int count = 0;
@@ -237,10 +250,18 @@ public class MovieApp {
         return newMovies;
     }
 
-    public static void sortMovie(Movie[] movies){
+    public static void sortMovie(Movie[] orjinalMovies){
+        if (orjinalMovies.length == 0) {
+            System.out.println("Movie not found!");
+            return;
+        }
+        Movie[] movies = new Movie[orjinalMovies.length];
+        for (int i = 0; i < movies.length; i++) {
+            movies[i] = new Movie(orjinalMovies[i].name, orjinalMovies[i].rating);
+        }
         for(int i=0; i<movies.length-1;i++){
             int minIndex = i;
-            for(int j=1; j<movies.length;j++){
+            for(int j=i+1; j<movies.length;j++){
                 if(movies[j].rating>movies[minIndex].rating){
                     minIndex=j;
                 }
@@ -249,8 +270,6 @@ public class MovieApp {
             movies[i]= movies[minIndex];
             movies[minIndex] = temp;
         }
-        for(Movie movie : movies){
-            System.out.println(movie.toString());
-        }
+        displayMovies(movies);
     }
 }
