@@ -10,9 +10,7 @@ public class Movie {
     }
     @Override
     public String toString() {
-        return "Movie{" +
-                "name='" + name + '\'' +
-                ", rating=" + rating +
-                '}';
+        return  "Name='" + name + '\'' +
+                ", rating=" + rating;
     }
 }

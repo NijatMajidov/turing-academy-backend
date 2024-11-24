@@ -12,11 +12,18 @@ public class MovieApp {
         int count = 0;
 
         while (proses) {
-            System.out.println("\n1. Input movies\n 2. Display movies and ratings\n 3. How many movies to add\n" +
-                    " 4. Calculate and display" + "\n 5. Search for a movie \n 6. Update rating \n " +
-                    "7. Delete movie \n 8. Sort movies \n0. Exit");
+            System.out.println("\nMenu:" +
+                    "\n1. Input movies" +
+                    "\n2. Display movies and ratings" +
+                    "\n3. How many movies to add" +
+                    "\n4. Calculate and display" +
+                    "\n5. Search for a movie" +
+                    "\n6. Update rating " +
+                    "\n7. Delete movie" +
+                    "\n8. Sort movies" +
+                    "\n0. Exit");
 
-            System.out.println("Enter the choice: ");
+            System.out.print("Enter the choice: ");
             choice = scan.next();
             scan.nextLine();
 
@@ -26,9 +33,7 @@ public class MovieApp {
                     count+=3;
                     break;
                 case "2":
-                    for (int i = 0; i < movies.length; i++) {
-                        System.out.println(movies[i].toString());
-                    }
+                    displayMovies(movies);
                     break;
                 case "3":
                     System.out.println("How many movies to add? ");
@@ -39,20 +44,11 @@ public class MovieApp {
                     break;
                 case "4":
                     System.out.printf("The average rating of all movies: %5.2f\n", numericalAverage(movies));
-
-                    Movie[] maxRatedMovies = maxRating(movies);
                     System.out.println("Movies with the maximum rating:");
-                    for (Movie movie : maxRatedMovies) {
-                        System.out.println(movie.toString());
-                    }
-
-                    Movie[] minRatedMovies = minRating(movies);
+                    displayMovies(maxRating(movies));
                     System.out.println("Movies with the minimum rating:");
-                    for (Movie movie : minRatedMovies) {
-                        System.out.println(movie.toString());
-                    }
+                    displayMovies(minRating(movies));
                     break;
-
                 case "5":
                     System.out.print("Enter the search movie name: ");
                     String name = scan.nextLine();
@@ -113,6 +109,15 @@ public class MovieApp {
             count++;
         }
         return movies;
+    }
+    public static void displayMovies(Movie[] movies){
+        if(movies[0]==null){
+            System.out.println("there is no movie!");
+        }else{
+            for (int i = 0; i < movies.length; i++) {
+              System.out.println(movies[i].toString());
+            }
+        }
     }
 
     public static double numericalAverage(Movie[] movies){
