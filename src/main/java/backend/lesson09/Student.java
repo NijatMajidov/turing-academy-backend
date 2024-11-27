@@ -6,17 +6,24 @@ public class Student {
     private int studentId;
     private double grade;
 
-    public Student(String name, String surname, int studentId) {
+    public Student(String name, String surname, int dilber) {
         this.name = name;
         this.surname = surname;
-        this.studentId = studentId;
+        this.studentId = dilber;
         this.grade = 0.0;
     }
-    public void printInfo() {
-        System.out.println("Öğrenci ID: " + studentId);
-        System.out.println("Adı: " +    name);
-        System.out.println("Soyadı: " + surname);
-        System.out.println("Not: " + grade);
+
+    public int getStudentId() {
+        return this.studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        if(studentId>100){
+        this.studentId = studentId;
+        }
+        else{
+            System.out.println("Student Id duz deyil");
+        }
     }
 
     @Override
