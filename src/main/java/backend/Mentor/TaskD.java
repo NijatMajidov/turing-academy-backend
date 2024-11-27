@@ -19,7 +19,7 @@ public class TaskD {
         for(int i=1;i<count-1;i++){
             if(numbers[i]>max){
                 max=numbers[i];
-                say++;
+                say=i;
             }
         }
         System.out.println(max+" "+say);
